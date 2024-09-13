@@ -183,8 +183,13 @@ public class Main {
                 System.out.println("Login successful!");
                 return user;
             }
+        else if(!user.getUsername().equals(username) && user.getPassword().equals(password))
+            System.out.println("Login failed. Invalid username");
+        else if(user.getUsername().equals(username) && !user.getPassword().equals(password))
+            System.out.println("Login failed. Invalid Password");
+        else 
+            System.out.println("Something is went wrong.");
         }
-        System.out.println("Login failed. Invalid username or password.");
         return null;
     }
 
